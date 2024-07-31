@@ -1,0 +1,27 @@
+{
+  "course": {
+    "id": "1",
+    "name": "First Grade",
+    "teacher": "John Smith",
+    "students": [
+      {
+        "name": "John",
+        "age": 7,
+        "gender": "male",
+        "id": "123456789"
+      },
+      {
+        "name": "Mary",
+        "age": 6,
+        "gender": "female",
+        "id": "987654321"
+      },
+      {
+        "name": "Peter",
+        "age": 7,
+        "gender": "male",
+        "id": "456789123"
+      }
+    ]
+  }
+}
