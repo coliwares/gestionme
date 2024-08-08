@@ -23,5 +23,27 @@
         "id": "456789123"
       }
     ]
-  }
+  },
+  "auth": {
+    "username": "",
+    "password": ""
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "id": "123456789",
+      "name": "Admin",
+      "email": "admin@correo.com"
+    },
+    {
+      "username": "teacher",
+      "password": "teacher",
+      "role": "teacher",
+      "id": "987654321",
+      "name": "Teacher",
+      "email": "teacher@mail.com"
+    }
+  ]
 }
