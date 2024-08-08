@@ -4,17 +4,47 @@
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
         <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
-          <input matInput type="text" required />
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="user.username"
+            name="username"
+            required
+          />
+          <mat-error
+            *ngIf="loginForm.submitted && !loginForm.controls['username'].valid"
+          >
+            Username is required
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput type="password" required />
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="user.password"
+            name="password"
+            required
+          />
+          <mat-error
+            *ngIf="loginForm.submitted && !loginForm.controls['password'].valid"
+          >
+            Password is required
+          </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!loginForm.form.valid"
+        >
+          Login
+        </button>
       </form>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
     </mat-card-content>
   </mat-card>
 </div>

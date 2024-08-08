@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <mat-select placeholder="Seleccionar curso">
+    <mat-option *ngFor="let course of courses" [value]="course">{{
+      course.name
+    }}</mat-option>
+  </mat-select>
+</mat-toolbar>
+
+<mat-nav-list>
+  <mat-list-item routerLink="/lista-cursos">
+    <mat-icon>list</mat-icon>
+    <span>Lista de cursos</span>
+  </mat-list-item>
+  <mat-list-item routerLink="/evaluaciones">
+    <mat-icon>assignment</mat-icon>
+    <span>Evaluaciones</span>
+  </mat-list-item>
+  <mat-list-item routerLink="/anotaciones">
+    <mat-icon>note</mat-icon>
+    <span>Anotaciones</span>
+  </mat-list-item>
+  <mat-list-item routerLink="/pie">
+    <mat-icon>pie_chart</mat-icon>
+    <span>PIE</span>
+  </mat-list-item>
+  <mat-list-item routerLink="/sep">
+    <mat-icon>school</mat-icon>
+    <span>SEP</span>
+  </mat-list-item>
+  <mat-list-item routerLink="/otros">
+    <mat-icon>more_horiz</mat-icon>
+    <span>Otros</span>
+  </mat-list-item>
+</mat-nav-list>

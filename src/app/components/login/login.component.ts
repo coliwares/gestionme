@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { User } from '../../models/user.model';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +12,13 @@ export class LoginComponent {
   user: User = new User();
   errorMessage: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     this.authService.login(this.user).subscribe(
       (response) => {
         console.log('Login successful', response);
-        // Manejar la respuesta exitosa, por ejemplo, guardar el token y redirigir al usuario
+        this.router.navigate(['/dashboard']); // Redirigir al usuario después del login
       },
       (error) => {
         console.error('Login failed', error);
